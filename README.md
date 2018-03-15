@@ -1,5 +1,5 @@
 # PSO_Clustering
-This scalable clustering algorithm is based on particle swarm optimization is based on Spark. I refered to the K-Means implementation in Spark MLlib [1] and this paper [2]. PSOClustering is consistent with the approach proposed in [2]. However, PSOClustering2 evaluate individual particle solutions seperately and sequentially in an iterative way instead of creating keys like (Particle ID, centroid ID).
+This scalable PSO-based (particle swarm optimization) clustering algorithm is implemented with Apache Spark. I refered to the K-Means implementation in Spark MLlib [1] and this paper [2]. PSOClustering is consistent with the approach proposed in [2]. However, PSOClustering2 evaluates individual particle solutions seperately and sequentially in an iterative way instead of creating keys like (Particle ID, centroid ID).
 
 
 [1] https://github.com/apache/spark/blob/master/mllib/src/main/scala/org/apache/spark/mllib/clustering/KMeans.scala
