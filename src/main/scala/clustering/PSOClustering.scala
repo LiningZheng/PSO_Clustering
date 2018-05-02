@@ -90,7 +90,7 @@ class PSOClustering private( //the private indicates that it's a private constru
     this
   }
 
-  protected def run(//?? I didn't use Instrumentation because I don't know what it is lol
+  protected def run(// I didn't use Instrumentation
                     data: RDD[Vector]): PSOClusteringModel = {
 
 
@@ -128,7 +128,7 @@ class PSOClustering private( //the private indicates that it's a private constru
     val swarm = initRandom(data)
     initialModel match {
       case Some(model) => {
-        val tpCentroids = model.clusterCentersWithNorm.map(new VectorWithNorm(_))//deep copy 666
+        val tpCentroids = model.clusterCentersWithNorm.map(new VectorWithNorm(_))//deep copy 
         swarm(0) = new Particle(0,tpCentroids,
           Array.fill(tpCentroids.length)(Vectors.zeros(tpCentroids.head.vector.size)),
           this.coefficient1, this.coefficient2)
@@ -248,7 +248,7 @@ class PSOClustering private( //the private indicates that it's a private constru
 }
 
 /**
-  * Top-level methods for calling K-means clustering by users.
+  * Top-level methods for calling PSO clustering by users.
   */
 
 object PSOClustering{
@@ -343,9 +343,6 @@ object PSOClustering{
       .setCentroidMatching(centroidMatching)
       .run(data)
   }
-
-
-
 }
 
 
